@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #102b46;
+  --color-primary-dark: #0a1b2c;
+  --color-primary-light: #183d5d;
+
+  --color-secondary: #183d5d;
+  --color-secondary-dark: #0e263c;
+  --color-secondary-light: #23547f;
+
+  --color-accent: #c8a45d;
+  --color-accent-dark: #ad8a42;
+  --color-accent-light: #dfc285;
+  --color-accent-subtle: #f9f5eb;
+
+  --color-background: #f7f9fc;
+  --color-surface: #ffffff;
+  --color-surface-muted: #eef2f6;
+
+  --color-text-main: #202b38;
+  --color-text-muted: #566779;
+  --color-text-light: #8898aa;
+
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Outfit", "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.015em;
+  }
+
+  /* Universal keyboard focus-visible indicator */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+/* Reduced Motion Accessibility Support (WCAG 2.1) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom utility classes */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #dfc285 0%, #c8a45d 50%, #ad8a42 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navy-gradient {
+  background: linear-gradient(135deg, #102b46 0%, #183d5d 100%);
+}
+
+.gold-gradient-border {
+  border-image: linear-gradient(135deg, #c8a45d, #dfc285) 1;
+}

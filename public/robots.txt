@@ -1,0 +1,13 @@
+# robots.txt for ROY CONSULTANCY
+# Allow all search engine crawlers to discover and index site content
+
+User-agent: *
+Allow: /
+
+# Disallow administrative/private patterns if added in the future
+Disallow: /api/
+Disallow: /admin/
+
+# Canonical Sitemap Location
+# (Note: Update this domain once the official production domain is registered and connected)
+Sitemap: https://royconsultancy.com/sitemap.xml
