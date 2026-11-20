@@ -7,6 +7,7 @@ import { scrollToSection } from '../../utils/scroll'
 import { useScrollSpy } from '../../hooks/useScrollSpy'
 import { Container } from '../common/Container'
 import { cn } from '../../utils/cn'
+import { logoMark } from '../../assets/Roy Consultancy Growth Logo'
 
 // Static reference to avoid recreating array and triggering IntersectionObserver recreation
 const SECTION_IDS = NAV_LINKS.map((link) => link.id)
@@ -72,79 +73,47 @@ export function Navbar() {
       >
         <Container className="flex items-center justify-between">
           {/* ========================================================= */}
-          {/* LEFT: BRAND NAME & MINIMAL PROFESSIONAL LOGO             */}
+          {/* LEFT: BRAND NAME & PROMINENT GROWTH LOGO                  */}
           {/* ========================================================= */}
           <button
             onClick={() => handleNavClick('hero')}
-            className="group flex items-center gap-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg p-1 transition-transform active:scale-[0.98] cursor-pointer"
+            className="group flex items-center gap-3 sm:gap-3.5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-xl p-1 transition-transform active:scale-[0.98] cursor-pointer"
             aria-label="Roy Consultancy - Return to top"
           >
-            {/* Minimal Geometric Financial Crest */}
+            {/* Official Roy Consultancy Growth Logo Badge - Big, Bold & Prominent */}
             <div
               className={cn(
-                'relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl transition-all duration-300 shadow-sm',
+                'relative flex items-center justify-center h-12 w-16 sm:h-14 sm:w-20 md:w-22 rounded-xl sm:rounded-2xl transition-all duration-300 shadow-md p-1 sm:p-1.5 overflow-hidden shrink-0',
                 isScrolled
-                  ? 'bg-primary text-accent border border-primary/20 shadow-primary/10'
-                  : 'bg-white/10 backdrop-blur-md text-accent border border-white/20'
+                  ? 'bg-linear-to-br from-primary-dark via-primary to-secondary border-2 border-accent/40 shadow-primary/20'
+                  : 'bg-primary-dark/90 backdrop-blur-md border-2 border-accent/50 shadow-black/40 ring-1 ring-white/15'
               )}
             >
-              {/* Minimalist Corporate Shield & Growth Bars SVG */}
-              <svg
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 transition-transform duration-300 group-hover:scale-105"
-                aria-hidden="true"
-              >
-                {/* Shield Outline */}
-                <path
-                  d="M16 3L6 7V15C6 21.5 10.3 27.5 16 29C21.7 27.5 26 21.5 26 15V7L16 3Z"
-                  stroke="currentColor"
-                  strokeWidth="1.75"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className={isScrolled ? 'text-accent' : 'text-accent-light'}
-                />
-                {/* Ascending Financial Pillars */}
-                <path
-                  d="M11 18V19.5"
-                  stroke={isScrolled ? '#FFFFFF' : '#FFFFFF'}
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M16 14V19.5"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  className="text-accent"
-                />
-                <path
-                  d="M21 10.5V19.5"
-                  stroke={isScrolled ? '#FFFFFF' : '#FFFFFF'}
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
+              <img
+                src={logoMark}
+                alt="Roy Consultancy Growth Logo"
+                className="w-full h-full object-contain filter drop-shadow-[0_2px_8px_rgba(0,203,235,0.35)] transition-transform duration-300 group-hover:scale-108"
+              />
             </div>
 
             {/* Typography */}
-            <div className="flex flex-col">
+            <div className="flex flex-col justify-center">
               <span
                 className={cn(
-                  'font-heading text-lg sm:text-xl font-extrabold tracking-tight leading-tight transition-colors',
+                  'font-heading text-xl sm:text-2xl lg:text-[26px] font-black tracking-tight leading-none transition-colors flex items-center gap-1 sm:gap-1.5',
                   isScrolled ? 'text-primary' : 'text-white'
                 )}
               >
-                ROY <span className="text-accent font-extrabold">CONSULTANCY</span>
+                <span>ROY</span>
+                <span className="text-accent font-black tracking-tight drop-shadow-xs">CONSULTANCY</span>
               </span>
               <span
                 className={cn(
-                  'text-[9px] sm:text-[10px] tracking-wider uppercase font-medium transition-colors',
-                  isScrolled ? 'text-text-muted' : 'text-slate-300'
+                  'text-[10px] sm:text-[11px] lg:text-[12px] tracking-wider uppercase font-extrabold transition-colors mt-1 sm:mt-1.5 leading-tight',
+                  isScrolled ? 'text-primary-dark' : 'text-accent-light'
                 )}
               >
-                Financial & Advisory Services • Kolkata
+                Financial & Insurance Advisory Services • Kolkata
               </span>
             </div>
           </button>
@@ -289,6 +258,25 @@ export function Navbar() {
               className="absolute top-18 sm:top-20 inset-x-0 bg-white shadow-2xl border-b border-slate-200/90 rounded-b-2xl overflow-hidden max-h-[85vh] flex flex-col"
             >
               <div className="p-6 overflow-y-auto space-y-4">
+                {/* Mobile Brand Header - Big, Bold & Prominent */}
+                <div className="flex items-center gap-3.5 pb-4 border-b border-slate-100">
+                  <div className="h-13 w-20 rounded-xl bg-linear-to-br from-primary-dark to-primary border-2 border-accent/40 p-1.5 flex items-center justify-center shadow-md shrink-0">
+                    <img
+                      src={logoMark}
+                      alt="Roy Consultancy Growth Logo"
+                      className="w-full h-full object-contain filter drop-shadow-[0_2px_6px_rgba(0,203,235,0.35)]"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-heading text-lg font-black text-primary tracking-tight leading-none">
+                      ROY <span className="text-accent font-black">CONSULTANCY</span>
+                    </span>
+                    <span className="text-[10px] uppercase tracking-wider font-extrabold text-accent-dark mt-1">
+                      Financial & Insurance Advisory Services
+                    </span>
+                  </div>
+                </div>
+
                 {/* Mobile Navigation Links */}
                 <nav className="flex flex-col space-y-1">
                   {NAV_LINKS.map((link, idx) => {

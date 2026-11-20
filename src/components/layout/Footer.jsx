@@ -15,6 +15,7 @@ import { NAV_LINKS } from '../../constants/navigation'
 import { scrollToSection } from '../../utils/scroll'
 import { Container } from '../common/Container'
 import { PolicyModal } from '../common/PolicyModal'
+import { logoFull } from '../../assets/Roy Consultancy Growth Logo'
 
 const INSURANCE_LINKS = [
   { label: 'Life Insurance Solutions', id: 'insurance' },
@@ -54,18 +55,13 @@ export function Footer() {
             
             {/* Column 1: Brand & Business Summary (lg:col-span-4) */}
             <div className="lg:col-span-4 space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-xl bg-linear-to-br from-secondary to-primary border border-accent/40 flex items-center justify-center shadow-inner">
-                  <span className="font-heading font-extrabold text-accent text-lg">RC</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-heading text-xl font-bold text-white tracking-tight leading-tight">
-                    ROY <span className="text-accent font-extrabold">CONSULTANCY</span>
-                  </span>
-                  <span className="text-[10px] text-slate-400 uppercase tracking-wider">
-                    Proprietor: {COMPANY_INFO.founder}
-                  </span>
-                </div>
+              {/* Official Roy Consultancy Original Full Logo on Crisp White Background */}
+              <div className="inline-block bg-white rounded-2xl p-3 sm:p-4 shadow-xl shadow-black/25 border-2 border-accent/40 max-w-[260px] sm:max-w-[290px]">
+                <img
+                  src={logoFull}
+                  alt="Roy Consultancy"
+                  className="w-full h-auto object-contain block"
+                />
               </div>
 
               <p className="text-sm text-slate-400 leading-relaxed font-sans">
